@@ -1,0 +1,23 @@
+PONG
+
+MVP (essential functionality)
+        - two users with up and down movements in different positions
+        - a ball that moves in time, is clamped 
+        - a gameover when the ball hits the border behind the player
+
+MILESTONES
+[1] the players
+            - create player1 (position size), 
+            - add movement (function; eventlistener)
+            -    rinse and repeat for player2 except different keys and position
+
+[2]the ball
+            - create ball (position size), 
+            - movement in time (diagonal?)
+          
+[3]the clamp
+            - clamp function for players
+            - clamp function for ball
+
+[4]the gameover
+            - if ball touches the border behind player = gameover
