@@ -8,8 +8,16 @@ MVP (essential functionality)
 MILESTONES
 [1] the players
             - create player1 (position size), 
+            - connect with HTML ; with board?
+
             - add movement (function; eventlistener)
             -    rinse and repeat for player2 except different keys and position
+
+
+
+
+
+
 
 [2]the ball
             - create ball (position size), 
