@@ -1,11 +1,20 @@
+#court {
+    background-color: rgb(0, 0, rgb(80, 80, 230));
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
 #player1 {
     background-color: brown;
+    position: absolute
 }
 
 #player2 {
     background-color: brown;
+    position: absolute;
 }
-
-#court {
-    background-color: rgb(0, 0, rgb(80, 80, 230));
+#ball {
+    background-color: #4b4bb1;
+    position: absolute;
 }

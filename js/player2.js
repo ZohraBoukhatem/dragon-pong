@@ -1,6 +1,6 @@
 class Player2 {
     constructor() {
-        this.positionX=0
+        this.positionX= 1500
         this.positionY= 0
         this.height= 160
         this.width=40
@@ -14,13 +14,13 @@ class Player2 {
     }
 
     moveDown() {
-        this.positionY--
-
+        this.positionY -= 30
         this.player2.style.bottom = this.positionY + "px";
     }
 
     moveUp() {
-        this.positionY++
+        this.positionY += 30
+        this.player2.style.bottom = this.positionY + "px";
     }
 }
 
@@ -28,11 +28,11 @@ const player2 = new Player2()
 
 document.addEventListener("keydown", (event) => {
     switch (event.key) {
-        case "s":
+        case "ArrowDown":
             console.log("down")
         player2.moveDown()
         break;
-        case "w":
+        case "ArrowUp":
             console.log("Up")
         player2.moveUp()
         break;

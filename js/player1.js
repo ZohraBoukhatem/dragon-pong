@@ -14,13 +14,13 @@ class Player1 {
     }
 
     moveDown() {
-        this.positionY--
-
+        this.positionY-= 30
         this.player1.style.bottom = this.positionY + "px";
     }
 
     moveUp() {
-        this.positionY++
+        this.positionY += 30
+        this.player1.style.bottom = this.positionY + "px"
     }
 }
 
@@ -28,11 +28,11 @@ class Player1 {
 
 document.addEventListener("keydown", (event) => {
     switch (event.key) {
-        case "ArrowDown":
+        case "s":
             console.log("down")
         player1.moveDown()
         break;
-        case "ArrowUp":
+        case "w":
             console.log("Up")
         player1.moveUp()
         break;

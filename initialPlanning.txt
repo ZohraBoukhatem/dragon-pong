@@ -6,7 +6,7 @@ MVP (essential functionality)
         - a gameover when the ball hits the border behind the player
 
 MILESTONES
-[1] the players
+[x] the players
             - create player1 (position size), 
             - connect with HTML ; with board?
 
@@ -14,18 +14,15 @@ MILESTONES
             -    rinse and repeat for player2 except different keys and position
 
 
-
-
-
-
-
-[2]the ball
+[]the ball
             - create ball (position size), 
             - movement in time (diagonal?)
           
-[3]the clamp
+[]the clamp
             - clamp function for players
             - clamp function for ball
 
-[4]the gameover
+[]the gameover
             - if ball touches the border behind player = gameover
+
+[]clean up, especially css, html, js
