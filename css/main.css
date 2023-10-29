@@ -5,6 +5,7 @@
     position: relative;
     overflow: hidden;
 }
+
 #player1 {
     background-color: brown;
     position: absolute
@@ -14,6 +15,7 @@
     background-color: brown;
     position: absolute;
 }
+
 #ball {
     background-color: #4b4bb1;
     position: absolute;
