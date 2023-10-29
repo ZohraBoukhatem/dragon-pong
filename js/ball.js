@@ -33,4 +33,14 @@ const ball = new Ball()
 
 setInterval(() => {
     ball.move()
+
+    if (ball.positionX ==  1500) {
+            location.href = "./gameover1.html"
+    }
+    
+    if (ball.positionX == 0) {
+        location.href = "./gameover2.html";
+        }
 }, 500)
+
+
