@@ -1,9 +1,17 @@
+body {
+    text-align: center;
+    padding: 10px;
+}
+
 #court {
-    background-color: rgb(0, 0, rgb(80, 80, 230));
-    width: 100vw;
-    height: 100vh;
+    background-color: aliceblue;
+    width: 70vw;
+    height: 70vh;
     position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    border: 5px solid black;
 }
 
 #player1 {
@@ -19,4 +27,9 @@
 #ball {
     background-color: #4b4bb1;
     position: absolute;
+}
+
+.text {
+    font-size: large;
+    font-family: sans-serif;
 }
