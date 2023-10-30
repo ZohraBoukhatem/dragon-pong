@@ -4,28 +4,29 @@ body {
 }
 
 #court {
-    background-color: aliceblue;
+    background-image: url(../img/bg.jpg.png);
+    background-size: cover;
     width: 70vw;
     height: 70vh;
     position: relative;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
     border: 5px solid black;
 }
 
 #player1 {
-    background-color: brown;
+    background-image: url(../img/player1.png);
+    background-size: cover;
     position: absolute
 }
 
 #player2 {
-    background-color: brown;
+    background-image: url("../img/player2.png");
     position: absolute;
+    background-size: cover;
 }
 
 #ball {
-    background-color: #4b4bb1;
+    background-image: url("../img/ball.png");
+    background-size: contain;
     position: absolute;
 }
 

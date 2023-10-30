@@ -1,9 +1,9 @@
 class Ball {
   constructor() {
     this.positionX = 0;
-    this.positionY = 700;
-    this.height = 30;
-    this.width = 30;
+    this.positionY = 50
+    this.height = 28;
+    this.width = 28;
 
     this.ball = document.getElementById("ball");
     this.ball.style.height = this.height + "px";
@@ -12,40 +12,33 @@ class Ball {
     this.ball.style.left = this.positionX + "px";
   }
 
-  move() {
+  
+  moveRight() {
+    this.positionX++ 
+    this.ball.style.left = this.positionX + "px";
+    
+ // if (ball.positionX == 1035) {
+  //  location.href = "./gameover1.html"; }
+}
 
-    if (this.positionY > 0) {
-    this.positionY -= 2;
-  } else if (this.positionY <= 0){
-    this.positionY +=2
+  moveLeft() {
+    this.positionX--
+    this.ball.style.left = this.positionX + "px"
+    
+ // if (ball.positionX == 0) {
+ //   location.href = "./gameover2.html"; }
   }
 
+  checkCollision(player) {
+    
+    if (
+      player.positionX < ball.positionX + ball.width &&
+      player.positionX + player.width > ball.positionX &&
+      player.positionY < ball.positionY + ball.height &&
+      player.positionY + player.height > ball.positionY
+  ) {
+    return true
+  }
 
-
-
-  this.positionX += 4;
-  this.ball.style.bottom = this.positionY + "px";
-  this.ball.style.left = this.positionX + "px";
-
+  }
 }
-
-}
-
-
-const ball = new Ball();
-let updatesAfterBounce = 0;
-
-
-
-setInterval(() => {
-    ball.move();
-      
-  
-    if (ball.positionX == 1500) {
-      location.href = "./gameover1.html";
-    }
-    if (ball.positionX == 0) {
-      location.href = "./gameover2.html";
-    }
-  }, 50);
-  

@@ -13,7 +13,7 @@ MILESTONES
             - rinse and repeat for player2 except different keys and position
 
 
-[]the ball
+[x]the ball
             - create ball (position size), 
             - movement in time (diagonal?)
 
@@ -21,8 +21,7 @@ MILESTONES
             - clamp function for players
             - clamp function for ball
 
-[]the gameover
+[x]the gameover
             - if ball touches the border behind player = gameover
 
 []  - clean up css, html, js
-    - start page
