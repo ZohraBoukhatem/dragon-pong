@@ -34,3 +34,7 @@ body {
     font-size: large;
     font-family: sans-serif;
 }
+
+#logo {
+   width: 300px;
+}

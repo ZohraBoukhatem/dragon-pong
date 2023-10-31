@@ -16,17 +16,16 @@ class Ball {
   moveRight() {
     this.positionX++ 
     this.ball.style.left = this.positionX + "px";
-    
- // if (ball.positionX == 1035) {
-  //  location.href = "./gameover1.html"; }
-}
+  if (ball.positionX == 1035) {
+   location.href = "./gameover1.html"; }
+    }
 
   moveLeft() {
     this.positionX--
     this.ball.style.left = this.positionX + "px"
     
- // if (ball.positionX == 0) {
- //   location.href = "./gameover2.html"; }
+  if (ball.positionX == 0) {
+  location.href = "./gameover2.html"; }
   }
 
   checkCollision(player) {

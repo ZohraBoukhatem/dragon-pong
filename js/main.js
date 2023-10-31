@@ -34,18 +34,25 @@ document.addEventListener("keydown", (event) => {
 });
 
 
-
-setInterval(() => {
+function movingRight() {
+const intervalID = setInterval(() => {
     ball.moveRight();
    if (ball.checkCollision(player2)) {
-    clearInterval()
-   }
+    clearInterval(intervalID)
+    movingLeft() 
+  }
   }, 5);
+}
   
-  
-setInterval(() => {
+function movingLeft() {
+const intervalID = setInterval(() => {
   ball.moveLeft();
   if (ball.checkCollision(player1)) {
-    clearInterval()
+    clearInterval(intervalID)
+    movingRight()
   }
 }, 5);
+}
+
+
+movingRight()
