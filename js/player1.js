@@ -6,7 +6,6 @@ class Player1 {
     this.width = 55;
 
     this.player1 = document.getElementById("player1");
-
     this.player1.style.height = this.height + "px";
     this.player1.style.width = this.width + "px";
     this.player1.style.bottom = this.positionY + "px";

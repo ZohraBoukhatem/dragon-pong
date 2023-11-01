@@ -3,12 +3,17 @@ const player1 = new Player1();
 const player2 = new Player2();
 const ball = new Ball();
 let player1CanMove = false
+
 const audio = new Audio("./audio/Background music.mp3")
-audio.volume = 0.5
+audio.volume = 0.2
 audio.play()
 audio.loop=true
+
+
 const effect = new Audio("./audio/platform collision.wav")
 effect.volume = 0.8
+
+
 document.addEventListener("keydown", (event) => {
   switch (event.key) {
     case "ArrowDown":
@@ -47,17 +52,16 @@ function freezePlayer(playerNumber) {
   }
 }
 
-
-const intervalID = setInterval(() => {
-  ball.increaseSpeed()
-},6000);
-
-
 function movingRight() {
-const intervalID = setInterval(() => {
+const intervalIDRight = setInterval(() => {
+  if (ball.positionX >= 1040) {
+    this.speed = 0;
+    console.log("WHYYY")
+ return   location.href = "./gameover1.html";
+  }
     ball.moveRight();
    if (ball.checkCollision(player2)) {
-    clearInterval(intervalID)
+    clearInterval(intervalIDRight)
     effect.play()
     movingLeft() 
     freezePlayer(2)
@@ -66,10 +70,10 @@ const intervalID = setInterval(() => {
 }
   
 function movingLeft() {
-const intervalID = setInterval(() => {
+const intervalIDLeft = setInterval(() => {
   ball.moveLeft();
   if (ball.checkCollision(player1)) {
-    clearInterval(intervalID)
+    clearInterval(intervalIDLeft)
     effect.play()
     movingRight()
     freezePlayer(1)
@@ -78,22 +82,22 @@ const intervalID = setInterval(() => {
 }
 
 function movingDown() {
-  const intervalID = setInterval(() => {
+  const intervalIDDown = setInterval(() => {
     const wall = 0
     ball.moveDown();
    if (ball.checkCollisionWithWall(wall)) {
-    clearInterval(intervalID)
+    clearInterval(intervalIDDown)
     movingUp() 
   }
   }, 5);
 }
 
 function movingUp() {
-  const intervalID = setInterval(() => {
+  const intervalIDUp = setInterval(() => {
     const wall = 500
     ball.moveUp();
    if (ball.checkCollisionWithWall(wall)) {
-    clearInterval(intervalID)
+    clearInterval(intervalIDUp)
     movingDown() 
   }
   }, 5);
@@ -104,3 +108,8 @@ movingRight()
 
 movingDown()
 
+/*
+const intervalID = setInterval(() => {
+  ball.increaseSpeed()
+},6000);
+*/
