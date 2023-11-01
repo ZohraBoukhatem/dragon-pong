@@ -3,11 +3,11 @@ const player1 = new Player1();
 const player2 = new Player2();
 const ball = new Ball();
 let player1CanMove = false
-const audio = new Audio("audio/Background music.mp3")
+const audio = new Audio("./audio/Background music.mp3")
 audio.volume = 0.5
 audio.play()
 audio.loop=true
-const effect = new Audio("audio/platform collision.wav")
+const effect = new Audio("./audio/platform collision.wav")
 effect.volume = 0.8
 document.addEventListener("keydown", (event) => {
   switch (event.key) {
