@@ -14,12 +14,12 @@ class Player2 {
   }
 
   moveDown() {
-    this.positionY -= 30;
+    this.positionY -= 20;
     this.player2.style.bottom = this.positionY + "px";
   }
 
   moveUp() {
-    this.positionY += 30;
+    this.positionY += 20;
     this.player2.style.bottom = this.positionY + "px";
   }
 }

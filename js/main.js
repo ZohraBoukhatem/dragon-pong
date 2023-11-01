@@ -3,7 +3,12 @@ const player1 = new Player1();
 const player2 = new Player2();
 const ball = new Ball();
 let player1CanMove = false
-
+const audio = new Audio("audio/Background music.mp3")
+audio.volume = 0.5
+audio.play()
+audio.loop=true
+const effect = new Audio("audio/platform collision.wav")
+effect.volume = 0.8
 document.addEventListener("keydown", (event) => {
   switch (event.key) {
     case "ArrowDown":
@@ -45,7 +50,7 @@ function freezePlayer(playerNumber) {
 
 const intervalID = setInterval(() => {
   ball.increaseSpeed()
-},5000);
+},6000);
 
 
 function movingRight() {
@@ -53,6 +58,7 @@ const intervalID = setInterval(() => {
     ball.moveRight();
    if (ball.checkCollision(player2)) {
     clearInterval(intervalID)
+    effect.play()
     movingLeft() 
     freezePlayer(2)
   }
@@ -64,6 +70,7 @@ const intervalID = setInterval(() => {
   ball.moveLeft();
   if (ball.checkCollision(player1)) {
     clearInterval(intervalID)
+    effect.play()
     movingRight()
     freezePlayer(1)
   }

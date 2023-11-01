@@ -17,7 +17,7 @@ MILESTONES
             - create ball (position size), 
             - movement in time (diagonal?)
 
-[]the clamp
+[x]the clamp
             - clamp function for players
             - clamp function for ball
 

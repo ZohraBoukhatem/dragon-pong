@@ -14,7 +14,7 @@ class Ball {
   }
   
   increaseSpeed() {
-    this.speed++
+    this.speed += 0.5
   }
   
   
