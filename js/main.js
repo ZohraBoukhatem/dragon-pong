@@ -5,13 +5,13 @@ const ball = new Ball();
 let player1CanMove = false
 
 const audio = new Audio("./audio/Background music.mp3")
-audio.volume = 0.2
+audio.volume = 0.1
 audio.play()
 audio.loop=true
 
 
 const effect = new Audio("./audio/platform collision.wav")
-effect.volume = 0.8
+effect.volume = 0.6
 
 
 document.addEventListener("keydown", (event) => {
@@ -54,11 +54,6 @@ function freezePlayer(playerNumber) {
 
 function movingRight() {
 const intervalIDRight = setInterval(() => {
-  if (ball.positionX >= 1040) {
-    this.speed = 0;
-    console.log("WHYYY")
- return   location.href = "./gameover1.html";
-  }
     ball.moveRight();
    if (ball.checkCollision(player2)) {
     clearInterval(intervalIDRight)
@@ -108,8 +103,7 @@ movingRight()
 
 movingDown()
 
-/*
+
 const intervalID = setInterval(() => {
   ball.increaseSpeed()
 },6000);
-*/

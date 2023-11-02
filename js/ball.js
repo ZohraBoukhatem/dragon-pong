@@ -21,10 +21,10 @@ class Ball {
   moveRight() {
     this.positionX += this.speed;
     this.ball.style.left = this.positionX + "px";
-    // if (this.positionX >= 1050) {
-    //   this.speed = 0;
-    //   location.href = "./gameover1.html";
-    // }
+     if (this.positionX >= 1050) {
+       this.speed = 0;
+       location.href = "./gameover1.html";
+     }
   }
 
   moveLeft() {
