@@ -22,7 +22,7 @@ document.addEventListener("keydown", (event) => {
       }
       break;
     case "ArrowUp":
-      if (player2.positionY < 350 && !player1CanMove) {
+      if (player2.positionY < 400 && !player1CanMove) {
       player2.moveUp();
       }
       break;
@@ -37,7 +37,7 @@ document.addEventListener("keydown", (event) => {
       player1.moveDown(); }
       break;
     case "w":
-      if (player1.positionY < 350 && player1CanMove) {
+      if (player1.positionY < 400 && player1CanMove) {
       player1.moveUp(); 
     }
       break;
@@ -89,7 +89,7 @@ function movingDown() {
 
 function movingUp() {
   const intervalIDUp = setInterval(() => {
-    const wall = 500
+    const wall = 520
     ball.moveUp();
    if (ball.checkCollisionWithWall(wall)) {
     clearInterval(intervalIDUp)

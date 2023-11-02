@@ -6,11 +6,30 @@ body {
     align-items: center;
 }
 
+button {
+    background-color:transparent;
+    border: 2px solid black;  
+    color: white;
+    font-family:cursive;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 15px 32px;  
+    margin: 20px
+}
+
+.text {
+    font-size: 30px;
+    margin: 20px;
+    font-family:cursive;
+    text-shadow: 2px 2px 3px black;
+}
+
 #court {
     background-image: url(../img/bg.jpg.png);
     background-size: cover;
-    width: 70vw;
-    height: 70vh;
+    width: 75vw;
+    height: 75vh;
     position: relative;
     border: 5px solid black;
     margin-top: 50px;
@@ -34,28 +53,48 @@ body {
     position: absolute;
 }
 
-.text {
-    font-size: 30px;
-    margin: 20px;
-    font-family:cursive
-}
-
-button {
-    background-color: #4CAF50;
-    border: 2px solid black;  
-    color: white;
-    font-family:cursive;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 15px 32px;  
-    margin: 20px
-  }
-
 #img {
     margin: 20px
 }
 
-#body {
-    background-color: rgb(248, 251, 253);
+#maincover {
+    background-image: url(../img/transparent\ bg.png);
+    background-size: cover;
 }
+
+#startcover {
+    background-image: linear-gradient(to right, rgb(155, 253, 153) , rgb(43, 98, 47));
+}   
+
+#vegetacover {
+    background-image: url(../img/vegeta\ bg.jpg);
+     background-size:cover;
+} 
+
+
+#gokucover {
+    background-image: url(../img/backgroundtile.png);
+     background-size:cover;
+
+     -webkit-animation: slidein 40s;
+     animation: slidein 40s;
+
+     -webkit-animation-fill-mode: forwards;
+     animation-fill-mode: forwards;
+
+     -webkit-animation-iteration-count: infinite;
+     animation-iteration-count: infinite;
+
+     -webkit-animation-direction: alternate;
+     animation-direction: alternate;            
+} 
+
+@keyframes slidein {
+    from {background-position: top;background-size:3000px; }
+    to {background-position: -100px 0px;background-size:2750px;}    
+    }
+    
+@-webkit-keyframes slidein {
+    from {background-position: top; background-size:3000px; }
+    to {background-position: -100px 0px;background-size:2750px;}
+    }

@@ -21,7 +21,7 @@ class Ball {
   moveRight() {
     this.positionX += this.speed;
     this.ball.style.left = this.positionX + "px";
-     if (this.positionX >= 1050) {
+     if (this.positionX >= 2000) {
        this.speed = 0;
        location.href = "./gameover1.html";
      }
