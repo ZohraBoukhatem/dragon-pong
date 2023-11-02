@@ -17,26 +17,27 @@ class Ball {
     this.speed += 0.5;
   }
 
-  ////////////////////////////  X POSITION
   moveRight() {
     this.positionX += this.speed;
     this.ball.style.left = this.positionX + "px";
-     if (this.positionX >= 2000) {
-       this.speed = 0;
-       location.href = "./gameover1.html";
-     }
   }
 
   moveLeft() {
     this.positionX -= this.speed;
     this.ball.style.left = this.positionX + "px";
-    if (this.positionX <= 0) {
-      this.speed = 0;
-      location.href = "./gameover2.html";
-    }
   }
 
-  checkCollision(player) {
+  moveUp() {
+    this.positionY++;
+    this.ball.style.bottom = this.positionY + "px";
+  }
+
+  moveDown() {
+    this.positionY--;
+    this.ball.style.bottom = this.positionY + "px";
+  }
+
+  checkCollisionWithPlayer(player) {
     if (
       player.positionX < ball.positionX + ball.width &&
       player.positionX + player.width > ball.positionX &&
@@ -47,19 +48,27 @@ class Ball {
     }
   }
 
-  ////////////////////////////  Y POSITION
-  moveUp() {
-    this.positionY++;
-    this.ball.style.bottom = this.positionY + "px";
-  }
-  moveDown() {
-    this.positionY--;
-    this.ball.style.bottom = this.positionY + "px";
-  }
-
-  checkCollisionWithWall(wall) {
+  checkCollisionWithYWall(wall) {
     if (ball.positionY == wall) {
       return true;
+    }
+  }
+
+  checkCollisionWithXWall() {
+    if (this.positionX >= 1130) {
+      clearInterval(intervalIDSpeed)
+      clearInterval(intervalIDLeft)
+      clearInterval(intervalIDRight)
+      clearInterval(intervalIDDown)
+      clearInterval(intervalIDUp)
+       location.href = "./gameover1.html";
+    } else if (this.positionX <= 0) {
+      clearInterval(intervalIDSpeed)
+      clearInterval(intervalIDLeft)
+      clearInterval(intervalIDRight)
+      clearInterval(intervalIDDown)
+      clearInterval(intervalIDUp)
+       location.href = "./gameover2.html"
     }
   }
 }

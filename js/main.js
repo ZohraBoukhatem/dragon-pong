@@ -2,18 +2,20 @@
 const player1 = new Player1();
 const player2 = new Player2();
 const ball = new Ball();
+
 let player1CanMove = false
 
+
+//audio
 const audio = new Audio("./audio/Background music.mp3")
-audio.volume = 0.1
+audio.volume = 0.4
 audio.play()
 audio.loop=true
-
-
 const effect = new Audio("./audio/platform collision.wav")
 effect.volume = 0.6
 
 
+//player1 and player2 input
 document.addEventListener("keydown", (event) => {
   switch (event.key) {
     case "ArrowDown":
@@ -29,7 +31,6 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-
 document.addEventListener("keydown", (event) => {
   switch (event.key) {
     case "s":
@@ -44,6 +45,8 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+
+//freeze player
 function freezePlayer(playerNumber) {
   if(playerNumber == 2) {
     player1CanMove = true 
@@ -52,24 +55,32 @@ function freezePlayer(playerNumber) {
   }
 }
 
+let intervalIDRight
+let intervalIDLeft
+let intervalIDDown
+let intervalIDUp
+
+//functions for moving the ball; contain intervals that call eachother
 function movingRight() {
-const intervalIDRight = setInterval(() => {
+  intervalIDRight = setInterval(() => {
     ball.moveRight();
-   if (ball.checkCollision(player2)) {
-    clearInterval(intervalIDRight)
+    ball.checkCollisionWithXWall()
+   if (ball.checkCollisionWithPlayer(player2)) {
     effect.play()
+    clearInterval(intervalIDRight)
     movingLeft() 
     freezePlayer(2)
   }
   }, 5);
 }
-  
+
 function movingLeft() {
-const intervalIDLeft = setInterval(() => {
+  intervalIDLeft = setInterval(() => {
   ball.moveLeft();
-  if (ball.checkCollision(player1)) {
-    clearInterval(intervalIDLeft)
+  ball.checkCollisionWithXWall()
+  if (ball.checkCollisionWithPlayer(player1)) {
     effect.play()
+    clearInterval(intervalIDLeft)
     movingRight()
     freezePlayer(1)
   }
@@ -77,33 +88,35 @@ const intervalIDLeft = setInterval(() => {
 }
 
 function movingDown() {
-  const intervalIDDown = setInterval(() => {
+  intervalIDDown = setInterval(() => {
     const wall = 0
     ball.moveDown();
-   if (ball.checkCollisionWithWall(wall)) {
-    clearInterval(intervalIDDown)
+   if (ball.checkCollisionWithYWall(wall)) {
+     clearInterval(intervalIDDown)
     movingUp() 
   }
   }, 5);
 }
 
 function movingUp() {
-  const intervalIDUp = setInterval(() => {
+  intervalIDUp = setInterval(() => {
     const wall = 520
     ball.moveUp();
-   if (ball.checkCollisionWithWall(wall)) {
-    clearInterval(intervalIDUp)
+   if (ball.checkCollisionWithYWall(wall)) {
+     clearInterval(intervalIDUp)
     movingDown() 
   }
   }, 5);
 }
 
 
+//interval that increases ball speed
+let intervalIDSpeed = setInterval(() => {
+  ball.increaseSpeed()
+},6000);
+
+
+//starting the game; calling the ball movement functions 
 movingRight()
 
 movingDown()
-
-
-const intervalID = setInterval(() => {
-  ball.increaseSpeed()
-},6000);
