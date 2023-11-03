@@ -67,7 +67,7 @@ class Ball {
       clearInterval(intervalIDLeft)
       clearInterval(intervalIDRight)
       clearInterval(intervalIDDown)
-      clearInterval(intervalIDUp)
+      clearInterval(intervalIDUp) 
        location.href = "./gameover2.html"
     }
   }

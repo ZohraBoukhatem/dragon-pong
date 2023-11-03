@@ -5,7 +5,6 @@ const ball = new Ball();
 
 let player1CanMove = false
 
-
 //audio
 const audio = new Audio("./audio/Background music.mp3")
 audio.volume = 0.4
