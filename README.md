@@ -1,5 +1,6 @@
 # DRAGON PONG
 
+![Screenshot 2023-11-08 153035](https://github.com/ZohraBoukhatem/dragon-pong/assets/138993259/ab2538c0-0257-47ba-a0ea-fa07c1454787)
 
 # Description
 A this simple "tennis like" game with two players and a (dragon)ball. 
