@@ -4,7 +4,7 @@
 
 # Description
 A this simple "tennis like" game with two players and a (dragon)ball. 
-The goal is to prgisotect the wall behind you and defeat your opponent by making the opponent miss the ball. 
+The goal is to protect the wall behind you and defeat your opponent by making the opponent miss the ball. 
 
 # How to play
 - move player1 with the 'w' and 's' keys, 
