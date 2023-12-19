@@ -12,8 +12,7 @@ The goal is to protect the wall behind you and defeat your opponent by making th
 - try to keep the ball away from your back wall and push it to the opponents wall
 
 # Demo 
-https://zohraboukhatem.github.io/pong/
-
+https://zohraboukhatem.github.io/dragon-pong/
 
 
 
